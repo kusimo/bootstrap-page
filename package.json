@@ -1,0 +1,23 @@
+{
+  "name": "bootstrap-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:page-product": "live-server productPage/",
+    "compile:page-product": "node-sass -rw productPage/index.scss -o productPage/css",
+    "dev:page-product": "npm-run-all -p serve:page-product compile:page-product"
+  },
+  "repository": {},
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "scss-compile": "^0.1.7",
+    "serve": "^11.3.0"
+  }
+}

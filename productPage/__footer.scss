@@ -1,0 +1,239 @@
+/* FOOTER */
+footer {
+    background-color: $background-main;
+    position: relative;
+    overflow: hidden;
+    a {
+        color: $body-color;
+    }
+    &.section-footer {
+       aside {
+        &.has-footer-logo {
+            padding-bottom: 1rem;
+            .footer-logo {
+                max-width: 80px;
+                @media (min-width:925px) {
+                    max-width: 100px;
+                }
+            }
+        }
+        .footer-block__heading {
+            position: relative;
+            margin-bottom: 0.9rem;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: .4px;
+            @media (min-width:540px) {
+                margin-bottom: 1.1rem;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 3px;
+                    width: 15%;
+                    min-width:50px;
+                    background-color: $light;
+                    left:0;
+                    bottom: -0.9rem;
+                    opacity: 0.9;
+                }
+            }
+            @media (min-width:768px) {
+                margin-bottom: 3rem;
+                &::before {
+                    bottom: -1.8rem;
+                }
+            }
+        }
+        a {
+            &[href^="mailto:"] {
+                text-decoration: underline;
+            }
+        }
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+                li {
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        padding: 7px 0;
+                        &:hover {
+                            color: currentColor;
+                            opacity: .8;
+                        }
+                    }
+                }
+        }
+       }
+       @media (min-width: 768px) {
+        padding-top: 6rem;
+       }
+    }
+    .footer-top-wrapper {
+        &::after {
+        content: "";
+      
+        }
+    }
+
+    .footer-bottom-wrapper {
+        position: relative;
+        background-color: $light;
+        .footer-bottom {
+            z-index: 2;
+            align-items: center;
+            position: relative;
+            margin-left:0;
+            .footer-social {
+                padding-left: 9px;
+                @media (min-width:768px) {
+                    padding-left: 40px;
+                }
+                a {
+                    background-color: transparent;
+                    border: 0;
+                    position: relative;
+                    padding: .13rem .24rem;
+                    @media (min-width:768px) {
+                        padding: .43rem .84rem;
+                    }
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                        @media (min-width:768px) {
+                            width: 30px;
+                            height: 30px;
+                        }
+                        &.icon-linkedin {
+                            margin-top: -2px;
+                        }
+                    }
+                    
+                }
+
+            }
+            .footer-copyright {
+                background-color: $background-main;
+                padding: 30px;
+                margin-left: -15px;
+                @media (min-width:768px) {
+                   flex:auto;
+                }
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                    @media (min-width:768px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+            /*
+            &::after {
+                width: 3vw;
+                max-width: 5vw;
+                margin-left: calc(50% - 50vw);
+            }
+            */
+            &::after {
+                content: "";
+                background: $light;
+                position: absolute;
+                height: 100%;
+                width: 50%;
+                right: -50%;
+                top: 0;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                left: 0;
+                background-color: $light;
+                width: 3vw;
+                max-width: 5vw;
+                margin-left: calc(50% - 50vw);
+            }
+        }
+        &::after {
+            /* border-top: 1px solid black; */
+            content: "";
+            position: absolute;
+            height: 2px;
+            left: 0;
+            background-color: $light;
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            z-index: 2;
+            top: 0;
+        }
+    }
+}
+
+
+/* Collapse Footer */
+@media (max-width: 540px) {
+	.collapse-footer-grid {
+		width: 100%;
+	}
+}
+.collapse-footer-grid {
+	.footer-block__heading {
+        cursor: pointer;
+		&:not(.active) {
+			+ {
+				.footer---content {
+					display: none;
+				}
+			}
+		}
+		&:after {
+			display: inline;
+			content: "";
+			position: absolute;
+			left: calc(100% - 30px);
+			width: 24px;
+			height: 24px;
+			min-width: 1.6rem;
+			min-height: 1.6rem;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 14px 14px;
+			transition: .2s;
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath stroke='rgb(0,0,0)'  d='M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z' /%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 12'%3E%3Cpath fill='rgb(0,0,0)' d='M8,4a1,1,0,0,1,.71.29l5,5a1,1,0,0,1,0,1.41l-5,5a1,1,0,1,1-1.41-1.41L11.59,10,7.29,5.71A1,1,0,0,1,8,4Z' transform='translate(-7 -4)'/%3E%3C/svg%3E");
+			transform: rotate(90deg);
+		}
+	}
+	.footer-block__heading.active {
+		&:after {
+			transform: rotate(270deg);
+		}
+	}
+}
+@media screen and (min-width: 540px) {
+	.collapse-footer-grid {
+		.footer-block__heading {
+            cursor: initial;
+			&:not(.active) {
+				+ {
+					.footer---content {
+						display: block;
+					}
+				}
+			}
+			cursor: unset;
+			+ {
+				.footer---content {
+					display: block;
+				}
+			}
+			&:after {
+				display: none;
+				content: "none";
+			}
+		}
+	}
+}
+

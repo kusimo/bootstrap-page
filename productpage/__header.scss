@@ -44,6 +44,7 @@
         }
         .user-account, .cart {
             display: flex;
+            align-items: center;
             >a {
                 display: flex;
                 align-items: center;
@@ -56,8 +57,11 @@
                 width: 33px;
                 &.icon-cart {
                     width: 42px;
+                    height: 42px;
                 }
             }
         }
     }
 }
+
+

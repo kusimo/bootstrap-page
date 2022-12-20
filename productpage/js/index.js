@@ -318,7 +318,18 @@ class CartNotification extends HTMLElement {
           nextEl: ".r-swiper-button-next",
           prevEl: ".r-swiper-button-prev",
         },
-  })
+  });
+
+
+  /**
+   * SUBSCRIBE FORM
+   */
+  const SubscribeForm = document.querySelector('.SubscribeSection-content-form'); 
+  if (SubscribeForm) {
+    SubscribeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+    })
+  }
 
 
   }) ();

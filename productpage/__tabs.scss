@@ -1,0 +1,201 @@
+.extra-content-section {
+    overflow: hidden;
+  }
+  #section-extra-tabs .extra-content-full-width {
+    display: flex;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw); 
+  }
+  .extra-content-section {
+    padding-top: 2.5rem;
+    border-bottom: 2px solid $light;
+    @media screen and (min-width: 768px) {
+        padding-top: 3.5rem;
+    }
+  }
+  
+  .tab-list-container {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background-color: $background-main;
+    padding-bottom: 30px;
+  }
+  .tab-list-container .adp-tab-content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .extra-content h2 {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+  
+  .exc-col {
+    position: relative;
+    padding: 1em;
+    margin: 0 2px 2px 0;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .exc-layout {
+      display: flex;
+    }
+  
+    .exc-layout.flex-column {
+      flex-direction: column;
+    }
+  
+    .flex-column.centered {
+      text-align: center;
+    }
+  }
+  
+  .exc-card .exc-column-title {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: initial;
+    line-height: 19px;
+  }
+  
+  .ul-container.extra-content-full-width {
+    margin-bottom: 2rem;
+    background-color: $background-main;
+    border-bottom: 2px solid $light;
+  }
+  
+  .extra-content-section ul[role="tablist"] {
+    margin: 0;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .extra-content-section ul[role="tablist"] li {
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 32px 32px 32px 0;
+    @media (min-width:768px) {
+        padding: 32px 32px;
+    }
+    white-space: nowrap;
+  }
+  
+  #section-extra-tabs .exc-ul-wrap {
+    margin: 0 auto;
+    margin-bottom: 0;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+  }
+  
+  @media screen and (min-width: 600px) {
+    #section-extra-tabs .exc-ul-wrap {
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+      text-align: center;
+      overflow-x: unset;
+      flex-wrap: nowrap;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .extra-content-section ul[role="tablist"] li {
+      white-space: normal;
+    }
+  }
+  
+  .extra-content-section ul[role="tablist"] li:hover {
+    color: initial;
+  }
+  
+  .extra-content-section ul[role="tablist"] li.active {
+    position: relative;
+    color: $base-color;
+    font-weight: 500;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        height: 2px;
+        background-color: $base-color;
+        width: 50%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+  }
+  
+  .adp-tab-pane:not(.active) {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .adp-tab-content > .active {
+    opacity: 1;
+    -webkit-animation: display-none-transition 1s ease;
+    animation: display-none-transition 1s ease;
+  }
+  
+  @keyframes display-none-transition {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+  
+    1% {
+      display: block;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes display-none-transition {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+  
+    1% {
+      display: block;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #extra-content-pages section .has-scrollbar::-webkit-scrollbar {
+    width: 2px;
+    height: 6px;
+  }
+  #extra-content-pages section .has-scrollbar::-webkit-scrollbar-thumb {
+    background: #fefefe;
+  }
+  #extra-content-pages section .has-scrollbar::-webkit-scrollbar-track {
+    background: #e6e6e6;
+  }
+  #extra-content-pages section .has-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+  }
+  
+  #extra-content-pages section .has-scrollbar {
+    scrollbar-width: none; /* Firefox 64 */
+    -ms-overflow-style: none; /* IE 11 */
+  }
+  

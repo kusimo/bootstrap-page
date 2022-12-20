@@ -256,7 +256,44 @@ class CartNotification extends HTMLElement {
                 elem.parentNode ?  elem.parentNode.remove() : '';
             }
         }
-  }
+    }
+
+    /*************************************
+     * PRODUCT TABS
+     */
+    let tabSection = document.querySelector("#tab-section-4");
+
+    if (tabSection) {
+      let tabUl = tabSection.getElementsByTagName("ul");
+      let contents = tabSection.querySelectorAll(
+        ".adp-tab-content .adp-tab-pane"
+      );
+      if (tabUl.length > 0) {
+        let tabLi = "#" + tabSection.getAttribute("id") + " ul li";
+        let tabLiItem = document.querySelectorAll(tabLi);
+
+        for (let i = 0; i < tabLiItem.length; i++) {
+          tabLiItem[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            for (let b = 0; b < tabLiItem.length; b++) {
+              tabLiItem[b].classList.remove("active");
+            }
+            this.classList.add("active");
+
+            // change content
+            for (i = 0; i < contents.length; i++) {
+              contents[i].classList.remove("active");
+            }
+
+            let tabId = this.getAttribute("data-id");
+
+            document.querySelector(tabId).classList.toggle("active");
+          });
+        }
+      }
+    }
+
+
 
 
   }) ();

@@ -1,11 +1,10 @@
 /* Product size guide */
 
 .SizeGuideContent {
-    display: none;
     padding: 1rem;
     margin-top: 33px;
     @media (min-width:925px) {
-        padding: 3rem;
+        padding: .1rem;
     }
     &-wrapper {
         gap:1rem;
@@ -15,7 +14,7 @@
         flex-direction: column;
         border-radius: 6px;
         @media (min-width:925px) {
-            flex-direction: row;
+            flex-direction: row-reverse;
         }
     }
     &-info {
@@ -57,11 +56,40 @@
     }
    img {
     width: 100%;
-    filter: drop-shadow(0px 2px 4px rgba(8, 35, 48, 0.24));
     border-radius: 9px;
     margin-top: -33px;
+    @media (min-width:768px) {
+    -webkit-animation: rain-up-down .4s infinite  alternate;
+    animation: rain-up-down .4s infinite  alternate;
+    }
    }
 }
+@-webkit-keyframes rain-up-down {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  
+  @keyframes rain-up-down {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
 .fslightbox-container .SizeGuideContent {
-    display: block!important;
+    &-wrapper {
+       @media (min-width:768px) {
+        padding-left: 1.2rem;
+        flex-direction: row;
+        gap:1.9rem;
+       }
+    }
+    &-info {
+        padding-top: 1rem;
+        @media (min-width:768px) {
+            padding-top: 0;
+        }
+    }
+    img {
+        filter: drop-shadow(0px 2px 4px rgba(8, 35, 48, 0.24));
+        animation: unset;
+       }
 }

@@ -294,6 +294,31 @@ class CartNotification extends HTMLElement {
     }
 
 
+    /**
+     * Related Product swiper
+     */
+    var relatedProductSwiper = new Swiper(".relatedProductSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+          },
+        },
+        navigation: {
+          nextEl: ".r-swiper-button-next",
+          prevEl: ".r-swiper-button-prev",
+        },
+  })
 
 
   }) ();

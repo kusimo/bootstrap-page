@@ -10,3 +10,7 @@ Bootstrap 5 product page.
 2. Run `npm install` 
 3. Start your dev environment: 
   `npm run dev:page-product` 
+
+  ### Demo
+
+[Bootstrap Product Page] (https://kusimo.github.io/bootstrap-page/productpage/)

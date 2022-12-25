@@ -13,4 +13,4 @@ Bootstrap 5 product page.
 
   ### Demo
 
-[Bootstrap Product Page] (https://kusimo.github.io/bootstrap-page/productpage/)
+[Bootstrap Product Page](https://kusimo.github.io/bootstrap-page/productpage/)
